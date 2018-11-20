@@ -1,7 +1,14 @@
+package model;
 import java.util.ArrayList;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 public class companyIban
 {
+   @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
    company company;
    String Iban;
    ArrayList<companyIban> list;
