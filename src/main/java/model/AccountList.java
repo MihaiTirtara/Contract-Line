@@ -71,11 +71,11 @@ public class AccountList
 		return null;
 	}
 	
-	public Account getAccountById(int id){
+	public Account getAccountById(String id){
 		
 		for(int i = 0;i<accounts.size();i++){
 			
-			if(accounts.get(i).getId()==id){
+			if(accounts.get(i).getId().equals(id)){
 				
 				return accounts.get(i);
 			}

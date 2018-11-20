@@ -8,7 +8,7 @@ import javax.persistence.Id;
 public class Account 
 {
 	@Id
-	private int id;
+	private String id;
 	private String password;
 	private String phoneNumber;
 	@Column(name="First_Name")
@@ -16,7 +16,7 @@ public class Account
 	@Column(name="Last_Name")
 	private String lName;
 	
-	public Account(int id, String password, String phoneNumber, String fName, String lName) 
+	public Account(String id, String password, String phoneNumber, String fName, String lName) 
 	{
 		this.id = id;
 		this.password = password;
@@ -25,11 +25,11 @@ public class Account
 		this.lName = lName;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
