@@ -4,4 +4,18 @@
   <artifactId>Contract_Line</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Contract_Line</name>
+  
+  <dependencies>
+  <dependency>
+  <groupId>org.hibernate</groupId>
+  <artifactId>hibernate-agroal</artifactId>
+  <version>5.3.7.Final</version>
+  <type>pom</type>
+</dependency>
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.2.5</version>
+</dependency>
+  </dependencies>
 </project>
