@@ -68,11 +68,32 @@ System.out.println("Database is on");
 			session.beginTransaction();
 			Account account = new Account(id,password,phoneNumber,fName,lName);
 			session.save(account);
+			session.getTransaction().commit();
+			session.close();
+			
+			
 		}
 		
 		else
 		{
 			System.out.println("Id is invalid");
+		}
+	}
+
+	public boolean checkId_password(String id, String password) throws RemoteException 
+	{
+	
+		SessionFactory sessionFactory = new Configuration().configure("hibernate_system.cfg.xml").buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Account account = session.get(Account.class,id);
+		
+		if(account.getPassword()==password)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
 		}
 	}
 	

@@ -36,7 +36,16 @@ public void Register(String id, String password, String phoneNumber, String fNam
 		throws RemoteException
 {
 	
-	tier3.CreateAccount(id, password, phoneNumber, fName, lName);
+	String hash_pass = Security.HashFunction(password);
+	
+	tier3.CreateAccount(id, hash_pass, phoneNumber, fName, lName);
+	
+}
+
+
+public boolean FirstAuth(String id, String password) throws RemoteException 
+{
+	return tier3.checkId_password(id, password);
 	
 }
 
