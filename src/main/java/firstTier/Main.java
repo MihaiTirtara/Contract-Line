@@ -1,6 +1,7 @@
+package firstTier;
 
 
-import javafx.application.Application;
+import javafx.application.Application; 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -31,9 +32,9 @@ public class Main extends Application
       loader.setController(new MainController());
 
       // set the location of the FXML doc
-      loader.setLocation(getClass().getResource("Mainwindow.fxml"));
+      loader.setLocation(getClass().getResource("mainwindow.fxml"));
       Parent root = loader.load();
-
+      
       // Build the scene graph
 
       Scene scene = new Scene(root);
