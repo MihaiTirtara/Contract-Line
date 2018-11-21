@@ -1,5 +1,4 @@
 package model;
-import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,22 +11,22 @@ public class company
 {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  int Id;
+  int id;
   String name;
   @Column (name = "capital")
-  capital cap;
+  Capital cap;
   String cEO;
-  address adres;
+  Adress adres;
   
-  ArrayList<AccountList> list;
+  AccountList participants;
 
   
   
    
-  company(int Id, String name, String cEO, userReg participants, address adres)
+  company(int Id, String name, String cEO, AccountList participants, Adress adres)
   {
      
-     this.Id = Id;
+     this.id = Id;
      this.name = name;
      this.cEO = cEO;
      this.participants = participants;
@@ -37,14 +36,10 @@ public class company
      
   }
   
-  public void addCompany(company comp)
-  {
-     list.add(comp);
-  }
   
   public int getId()
   {
-     this.Id = Id;
+     return id;
   }
 
 public String getName()
@@ -57,22 +52,22 @@ public void setName(String name)
    this.name = name;
 }
 
-public capital getCap()
+public Capital getCap()
 {
    return cap;
 }
 
-public void setCap(capital cap)
+public void setCap(Capital cap)
 {
    this.cap = cap;
 }
 
-public userReg getParticipants()
+public AccountList getParticipants()
 {
    return participants;
 }
 
-public void setParticipants(userReg participants)
+public void setParticipants(AccountList participants)
 {
    this.participants = participants;
 }
@@ -87,25 +82,16 @@ public void setcEO(String cEO)
    this.cEO = cEO;
 }
 
-public address getAdres()
+public Adress getAdres()
 {
    return adres;
 }
 
-public void setAdres(address adres)
+public void setAdres(Adress adres)
 {
    this.adres = adres;
 }
 
-public ArrayList<company> getList()
-{
-   return list;
-}
-
-public void setList(ArrayList<company> list)
-{
-   this.list = list;
-}
 
 public boolean equals(Object obj)
 {
