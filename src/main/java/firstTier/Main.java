@@ -41,7 +41,7 @@ public class Main extends Application
 
       // show the window using the scene graph
 
-      primaryStage.setTitle("VIA Main");
+      primaryStage.setTitle("Berlin");
       primaryStage.setScene(scene);
       primaryStage.show();
 

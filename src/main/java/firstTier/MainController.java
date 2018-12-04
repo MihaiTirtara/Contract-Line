@@ -37,8 +37,37 @@ public class MainController implements Initializable{
 
     @FXML
     void btnLogIn(ActionEvent event) {
-       System.out.println("ok");
-    }
+       Parent root;
+       try
+       {
+          // instatiate invoke the fxml loader
+          FXMLLoader loader = new FXMLLoader();
+
+          // set controller
+          loader.setController(new CompanyController());
+
+          // set the location of the FXML doc
+          loader.setLocation(getClass().getResource("Bank.fxml"));
+          root = loader.load();
+
+          // Build the scene graph
+
+          Scene scene = new Scene(root);
+
+          Stage stage = new Stage();
+
+          // show the window using the scene graph
+         
+          stage.setScene(scene);
+          stage.show();
+       }
+       catch (IOException e)
+       {
+          e.printStackTrace();
+       }
+ }
+
+    
 
     @FXML
     void btnReg(ActionEvent event) {
